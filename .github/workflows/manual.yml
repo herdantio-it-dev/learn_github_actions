@@ -1,0 +1,15 @@
+# .github/workflows/manual-trigger.yml
+name: Manual Deployment
+
+on:
+  workflow_dispatch: # Enables manual triggering
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run Script
+        run: echo "Workflow manually triggered by ${{ github.actor }}"
